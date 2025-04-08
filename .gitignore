@@ -6,4 +6,5 @@ dist
 logs
 
 .env
-.env.*
+.env.test
+.env.production

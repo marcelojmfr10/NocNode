@@ -13,5 +13,5 @@ MAILER_EMAIL=
 MAILER_SECRET_KEY=
 PROD=false
 ```
-
-
+3. ejecutar el comando ```npm install```
+4. ejecutar el comando ```npm run dev```

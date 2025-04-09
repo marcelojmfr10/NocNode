@@ -32,8 +32,8 @@ export class FileSystemDataSource implements LogDataSource {
 
         if (newLog.level === LogSeverityLevel.low) return;
 
-        if (newLog.level === LogSeverityLevel.medium){
-            fs.appendFileSync(this.mediumLogsPath,logAsJson);
+        if (newLog.level === LogSeverityLevel.medium) {
+            fs.appendFileSync(this.mediumLogsPath, logAsJson);
         } else {
             fs.appendFileSync(this.highLogsPath, logAsJson);
         }
@@ -50,14 +50,14 @@ export class FileSystemDataSource implements LogDataSource {
     }
 
     async getLogs(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {
-        switch(severityLevel){
+        switch (severityLevel) {
             case LogSeverityLevel.low:
                 return this.getLogsFromFile(this.allLogsPath);
             case LogSeverityLevel.medium:
                 return this.getLogsFromFile(this.mediumLogsPath);
             case LogSeverityLevel.high:
                 return this.getLogsFromFile(this.highLogsPath);
-            default: 
+            default:
                 throw new Error(`${severityLevel} not implemented`);
         }
     }

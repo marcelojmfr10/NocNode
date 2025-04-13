@@ -10,3 +10,4 @@ logs
 .env.production
 
 /mongo
+/postgres

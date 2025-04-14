@@ -53,8 +53,8 @@ export class Server {
 
         // CronService.createJob('*/5 * * * * *', () => {
         //     const url = 'https://google.com';
-        //     new CheckServiceMultiple(
-        //         [fsLogRepository, MongoLogRepository, PostgresLogRepository],
+        //     new CheckService(
+        //         LogRepository,
         //         () => console.log(`${url} is ok`), 
         //         (error) => console.log(error)).execute(url);
         //     // new CheckService().execute('http://localhost:3000');

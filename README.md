@@ -15,4 +15,11 @@ PROD=false
 ```
 3. ejecutar el comando ```npm install```
 4. levantar las bases de datos con el comando ```docker compose -d```
-5. ejecutar el comando ```npm run dev```
+5. ejecutar el comando 
+```
+npx prisma generate 
+npx prisma migrate dev 
+npx prisma db pull
+```
+6. ejecutar el comando ```npm run dev```
+

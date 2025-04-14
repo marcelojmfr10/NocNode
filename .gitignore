@@ -12,5 +12,8 @@ logs
 /mongo
 /postgres
 
+/mongo-test
+/postgres-test
+
 /src/generated
 /src/generated/prisma/

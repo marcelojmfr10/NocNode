@@ -40,17 +40,17 @@ describe('SendLogEmailUseCase', () => {
         mockEmailService.sendEmailWithFileSystemLogs.mockResolvedValue(false);
 
         const result = await sendEmailLogs.execute('marcelo@hotmail.com');
-        expect(result).toBe(false);
+        expect(result).toBeFalsy();
         expect(mockEmailService.sendEmailWithFileSystemLogs).toHaveBeenCalledTimes(1);
         expect(mockLogRepository.saveLog).toHaveBeenCalledWith(expect.any(LogEntity));
-        // expect(mockLogRepository.saveLog).toHaveBeenCalledWith(
-        //     {
-        //         createdAt: expect.any(Date),
-        //         level: "high",
-        //         message: "Log email sent",
-        //         origin: "send-email-log.ts",
-        //     },
-        // );
+        expect(mockLogRepository.saveLog).toHaveBeenCalledWith(
+            {
+                createdAt: expect.any(Date),
+                level: "high",
+                message: "Error: Email log not sent",
+                origin: "send-email-log.ts",
+            },
+        );
     });
 
 });

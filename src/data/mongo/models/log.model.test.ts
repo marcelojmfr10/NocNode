@@ -36,9 +36,7 @@ describe('log.model.test.ts', () => {
 
     test('should return the schema object', () => {
         const schema = LogModel.schema.obj;
-
-        console.log(schema);
-
+        
         expect(schema).toEqual(expect.objectContaining(
             {
                 message: { type: String, required: true },
